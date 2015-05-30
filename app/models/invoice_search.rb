@@ -3,8 +3,8 @@ class InvoiceSearch
     
     def initialize(params)
         params ||= {}
-        @date_from= Parsed_date(params[date_from], 7.days.ago.to_date.to_s )
-        @date_to= Parsed_date(params[date_to], Date.today.to_s )
+        @date_from = parsed_date(params[date_from], 7.days.ago.to_date.to_s )
+        @date_to= parsed_date(params[date_to], Date.today.to_s )
     end
     
     def scope
@@ -14,7 +14,7 @@ class InvoiceSearch
     private 
     
     def parsed_date (date_string,default)
-        date.parse(date_string)
+        Date.parse(date_string)
     rescue ArgumentError , TypeError
     default
     end
