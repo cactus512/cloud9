@@ -37,6 +37,7 @@ gem 'spring',        group: :development
 
 
 gem 'bootstrap-sass', '~> 3.2.0'
+gem 'devise'
 
 
 # Use ActiveModel has_secure_password
