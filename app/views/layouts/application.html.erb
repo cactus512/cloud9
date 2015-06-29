@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,13 +20,14 @@
          <li> <%= link_to "FAQs" , welcome_Faq_path  %></li>
           <li><%= link_to "Pricing" , welcome_Pricing_path  %></li>
           <li><%= link_to "Invoices" , invoices_path  %></li>
-          <li><%= link_to "Login" ,  new_user_session_path  %></li>
-    </ul> 
-    
-    
-    
-    <p class= "notice"><%= notice %></p>
-    <p class= "alert"><%= alert %></p>
+          
+          <% if current_user %>
+            <li><%= link_to "Log out" , destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to "Login" ,  new_user_session_path  %></li>
+            <li><%= link_to "Sign Up" , new_user_registration_path  %></li>
+          <% end %>
+    </ul>  
       
       <%= yield %>
   </div>
