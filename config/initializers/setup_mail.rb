@@ -6,5 +6,5 @@ ActionMailer::Base.smtp_settings = {
   :user_name            =>  'app22952193@heroku.com',
   :password             =>  'wkhka00q',
   :domain               =>  'heroku.com',
-  :enable_starttls_auto  =>  true
+  :enable_starttls_auto =>  true
 }
