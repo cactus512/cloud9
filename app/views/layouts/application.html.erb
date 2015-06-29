@@ -17,7 +17,13 @@
          <li> <%= link_to "FAQs" , welcome_Faq_path  %></li>
           <li><%= link_to "Pricing" , welcome_Pricing_path  %></li>
           <li><%= link_to "Invoices" , invoices_path  %></li>
-          <li><%= link_to "Login" , root_path  %></li>
+          
+          <% if current user %>
+            <li><%= link_to "Log out" , root_path  %></li>
+          <% else %>
+            <li><%= link_to "Login" , root_path  %></li>
+            <li><%= link_to "Sign Up" , root_path  %></li>
+          <% end %>
     </ul>  
       
       <%= yield %>
